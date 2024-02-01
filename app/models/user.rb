@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :pets
 
-  validates :first_name, :last_name, presence: true
+
 end
