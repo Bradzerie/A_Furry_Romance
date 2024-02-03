@@ -1,7 +1,34 @@
 <h1>Welcome to your Dashboard</h1>
 
+<p>Create a new pet/listing</p>
+<%= link_to "Add a new listing", new_pet_path %>
 
-<p>Create a new listing</p>
+<p>View your listings</p>
+<%# View all pet listings & get redirected to show page for each %>
+<%# <% @pets.each do |pet| %>
+    <%# <%= render "pets/show", pet: pet %>
+      <%# [folder]/[name of partial file with _], parsing the varaible name from the partial file: the object in the loop %>
+    <p>
+      <%# <%= link_to "Show this listing", pet %>
+    </p>
+    <%# <% end %> %>
+
+<%  # partial file is the _restaurant.html.erb file. Always starts with an underscore %>
+<%# <%= link_to "Add a new listing", new_pet_path %>
+
 <p>Edit your listing</p>
+<%= link_to "Edit a listing", edit_pet_path
+
 <p>Delete your listing</p>
-<p>View your listing</p>
+
+<%#for edit.html.erb %>
+<%# <h1>Edit Pet</h1>
+
+<%= simple_form_for @pet do |f| %>
+<%# <%= f.input :name %>
+<%# <%= f.input :age %>
+<%# <%= f.input :species %>
+<%# <%= f.input :gender %>
+<%# <%= f.input :price %>
+<%# <%= f.button :submit, 'Update Pet' %>
+<%# <% end %>
