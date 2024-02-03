@@ -6,4 +6,6 @@
 <p> Price: $<%= @pet.price %></p>
 
 <%= link_to 'Back to Pet Listings', pets_path %>
+<br>
+<%= link_to 'Make a Booking', new_pet_booking_path(@pet) %>
 </div>
