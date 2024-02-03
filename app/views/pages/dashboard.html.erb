@@ -1,1 +1,14 @@
-<h1>Welcome to <%= "Welcome #{User} to you dashboard" %> Dashboard</h1>
+<h1>Welcome to <%= "#{User}" %> Dashboard</h1>
+<%# change "User" to User.current or User.active to dispaly who is logged in when coded %>
+<ul>
+  <p>View your listings</p>
+  <br>
+  <p>Edit or delete your listings</p>
+  <br>
+
+</ul>
+
+
+<%= link_to 'View listings', pets_path %>
+
+<p>Edit your listing</p>
