@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
   end
 
+
   def dashboard
     # @user = User.find(params[:user_id])
     # @pet.user_id = @user
