@@ -1,1 +1,43 @@
 // Specific CSS for your home-page
+.container{
+  width: 800px;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+  text-align: left;
+  text-shadow: 4px 2px 1px rgba(0,0,0,0.1);
+}
+
+.div{
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color:aquamarine;
+  padding: 8px;
+}
+
+.container-pet{
+  width: 700px;
+  height: 1000px;
+  background-color: white;
+  padding: 10px;
+  margin-left: 30px;
+}
+
+.card-pet{
+text-align: center;
+}
+
+.card-pet p{
+  text-align: left;
+}
+
+#paragraph{
+  font-weight: 700;
+}

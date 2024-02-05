@@ -1,13 +1,9 @@
 <h1>Welcome to <%= "#{current_user.email}" %> Dashboard</h1>
-<%# change "User" to User.current or User.active to dispaly who is logged in when coded %>
 <ul>
   <p>View your listings</p>
   <br>
   <p>Edit or delete your listings</p>
   <br>
-
-</ul>
-
 
 <%= link_to 'View listings', pets_path %>
 

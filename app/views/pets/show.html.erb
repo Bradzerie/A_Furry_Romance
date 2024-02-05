@@ -1,11 +1,22 @@
-<div class="show">
-  <h1> <%= @pet.name %> </h1>
-    <p> Age: <%= @pet.age %></p>
-    <p> Species: <%= @pet.species %></p>
-    <p> Gender: <%= @pet.gender %></p>
-    <p> Price: $<%= @pet.price %></p>
-
-<%= link_to 'Back to Pet Listings', pets_path %>
-<br>
-<%= link_to 'Make a Booking', new_pet_booking_path(@pet) %>
+<div class="container-pet">
+  <div class="col-12">
+    <div class="div">
+      <div class="card-pet">
+        <h1> <%= @pet.name %> </h1>
+          <div id="paragraph">
+            <p> Age: <%= @pet.age %></p>
+            <p> Species: <%= @pet.species %></p>
+            <p> Gender: <%= @pet.gender %></p>
+            <p> Price: $<%= @pet.price %></p>
+          </div>
+        </div>
+    </div>
+              <%# Below are the buttons  %>
+  <button type="button" class="btn my-2 btn-outline-primary">
+    <%= link_to 'Back to Pet Listings', pets_path %>
+  </button>
+    <button type="button" class="btn btn-outline-primary">
+      <%= link_to 'Make a Booking', new_pet_booking_path(@pet) %>
+    </button>
+  </div>
 </div>
