@@ -1,5 +1,6 @@
 class Pet < ApplicationRecord
-  SPECIES = ['Dog', 'Cat', 'Rabbit', 'Alpaca', 'Baby Duck', 'Horse', 'Guinea Pig', 'Hamster', 'Tarantula', 'Ferret']
+  SPECIES = ['Dog', 'Cat', 'Rabbit', 'Alpaca', 'Baby Duck', 'Horse', 'Guinea Pig', 'Hamster', 'Tarantula', 'Ferret',
+  'Capybara']
   GENDER = ['Male', 'Female']
   belongs_to :user
 
