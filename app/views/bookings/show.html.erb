@@ -1,0 +1,8 @@
+<p> <%= @pet.name %></p>
+
+<p> Start: <%= @booking.start_date %></p>
+<p> End: <%= @booking.end_date %></p>
+
+<% end_date = @booking.end_date.to_date %>
+<% start_date = @booking.start_date.to_date %>
+<p>Booking cost: $<%= (((end_date - start_date).to_i + 1) * @pet.price) %></p>

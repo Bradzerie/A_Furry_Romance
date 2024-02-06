@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard'
   # root "articles#index"
   resources :pets do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :show, :index]
   end
   resource :bookings, only: [:index, :update, :destroy]
+  patch 'bookings/:id/accept', to: 'bookings#accept'
+  patch 'bookings/:id/reject', to: 'bookings#reject'
 end
