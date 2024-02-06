@@ -1,0 +1,14 @@
+<div class="container">
+  <h1><%= @pet.name %>'s Bookings</h1>
+  <div class="bookings-cards">
+    <ul>
+      <% @bookings.each do |booking| %>
+          <li>
+              <p><%= booking.user.email %> | Booking ID: <%= booking.id %></p>
+              <p><%= booking.start_date %> to <%= booking.end_date %> | Price: $<%= @pet.price %></p>
+              <p> Booking Status: <%= booking.status %></p>
+          </li>
+      <% end %>
+      </ul>
+    </div>
+</div>
