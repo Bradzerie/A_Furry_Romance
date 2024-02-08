@@ -10,11 +10,12 @@
             <p> Price: $<%= @pet.price %></p>
           </div>
         </div>
-            <% if @pet.user == current_user %>
-            <%= link_to pet_path(@pet), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <%# <% if @pet.user == current_user %>
+            <%= link_to pet_path(@pet),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
               <i class="fas fa-trash"></i>
             <% end %>
-        <% end %>
+        <%# <% end %>
       </div>
               <%# Below are the buttons  %>
   <button type="button" class="btn my-3 py-2 btn-outline-primary">
