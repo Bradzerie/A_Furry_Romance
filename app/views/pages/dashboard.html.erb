@@ -1,4 +1,4 @@
-<h1>Welcome to your Dashboard</h1>
+<h1>Welcome to your Dashboard <%= current_user.email %></h1>
 <ul>
   <p>View your listings</p>
   <br>
@@ -40,14 +40,18 @@
                   <p><%= booking.start_date %> to <%= booking.end_date %> </p>
                   <p>Booked by <%= booking.user.email %></p>
                   <p> Status: <%= booking.status %></p>
-                  <%= button_to "Accept", accept_booking_path(booking), class: "btn btn-outline-success", method: :post%>
-                  <%= button_to "Decline", reject_booking_path(booking), class: "btn btn-outline-danger", method: :post%>
+                  <%  if booking.status == 'Pending' %>
+                    <%= button_to "Accept", accept_booking_path(booking), class: "btn btn-outline-success", method: :post%>
+                    <%= button_to "Decline", reject_booking_path(booking), class: "btn btn-outline-danger", method: :post%>
+                  <% end %>
                 </div>
             <% end %>
           </div>
       </div>
     </div>
   </div>
+
+<div>
 <%= simple_form_for(@pet) do |f| %>
   <%= f.input :name %>
   <%= f.input :age %>
@@ -57,4 +61,8 @@
   <%= f.input :price %>
   <%= f.button :submit, class: 'btn btn-primary'%>
 <% end %>
+<<<<<<< HEAD
 
+=======
+</div>
+>>>>>>> 219b10eb2a04d2c8338594d647c6c5cc0ab687ec
