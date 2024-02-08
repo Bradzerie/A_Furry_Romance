@@ -13,7 +13,7 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.user = current_user
     if @pet.save
-      redirect_to pet_new_path(@pet), notcie: "Your pet is ready for listing"
+      redirect_to pet_path(@pet), notice: "Your pet is ready for listing"
     else
       puts @pet.errors.full_messages
     end
@@ -28,7 +28,6 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :age, :species, :description, :price)
+    params.require(:pet).permit(:name, :age, :species, :description, :price, :gender)
   end
-
 end
