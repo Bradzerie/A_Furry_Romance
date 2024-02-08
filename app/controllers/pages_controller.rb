@@ -5,8 +5,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @pet = Pet.new
     @bookings = Booking.where(user_id: current_user)
-    @pet_bookings = Booking.where(pet_id: current_user)
+    @pet_bookings = Booking.joins(:pet).where(pets: { user_id: current_user.id })
+    @pet = Pet.new
   end
 end
