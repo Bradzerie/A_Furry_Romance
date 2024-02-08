@@ -1,6 +1,5 @@
 class PetsController < ApplicationController
-  # before_action :authenticate_user!
-  # before_action :authorize_owner!, only: [:destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @pets = Pet.all

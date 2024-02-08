@@ -1,5 +1,8 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_pet, only: [:index, :new, :create, :show]
+
+
   def index
     @bookings = Booking.where(pet_id: @pet.id)
   end
@@ -26,14 +29,33 @@ class BookingsController < ApplicationController
   end
 
   def accept
+    @booking = Booking.find(params[:id])
     @booking.status = 'Confirmed'
+
+    if @booking.save
+      flash[:success] = "Booking has been approved!"
+      redirect_to dashboard_path
+    else
+      flash[:error] = "Failed to approve booking."
+      redirect_to dashboard_path
+    end
   end
 
   def reject
+    @booking = Booking.find(params[:id])
     @booking.status = 'Declined'
+
+    if @booking.save
+      flash[:success] = "Booking has been approved!"
+      redirect_to dashboard_path
+    else
+      flash[:error] = "Failed to approve booking."
+      redirect_to dashboard_path
+    end
   end
 
   private
+
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :pet_id, :user_id)
   end
