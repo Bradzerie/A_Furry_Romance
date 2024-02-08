@@ -1,4 +1,4 @@
-<h1>Welcome to <%= "#{current_user.email}" %> Dashboard</h1>
+<h1>Welcome to your Dashboard</h1>
 <ul>
   <p>View your listings</p>
   <br>
@@ -8,3 +8,45 @@
 <%= link_to 'View listings', pets_path %>
 
 <p>Edit your listing</p>
+
+
+
+<div class="container">
+    <h3>Your Bookings</h3>
+      <div class="col-12">
+        <div class="columns is-centered">
+          <div class="cards">
+            <% @bookings.each do |booking| %>
+            <div class="div">
+                    <p><%= booking.pet.name %> | <%= booking.pet.species %> </p>
+                    <p> <%= booking.pet.gender %> | <%= booking.pet.age %>yr</p>
+                    <p><%= booking.start_date %> to <%= booking.end_date %> </p>
+                    <p>Owned by <%= booking.pet.user.email %></p>
+                    <p> Status: <%= booking.status %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+
+<div class="container">
+    <h3>Bookings for your Pets</h3>
+    <div class="col-12">
+      <div class="columns is-centered">
+        <div class="cards">
+            <% @pet_bookings.each do |booking| %>
+                <div class="div">
+                  <p><%= booking.pet.name %> | <%= booking.pet.species %> </p>
+                  <p> <%= booking.pet.gender %> | <%= booking.pet.age %>yr</p>
+                  <p><%= booking.start_date %> to <%= booking.end_date %> </p>
+                  <p>Booked by <%= booking.user.email %></p>
+                  <p> Status: <%= booking.status %></p>
+                  <%= button_to "Accept", accept_booking_path(booking), class: "btn btn-outline-success", method: :post%>
+                  <%= button_to "Decline", reject_booking_path(booking), class: "btn btn-outline-danger", method: :post%>
+                </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>

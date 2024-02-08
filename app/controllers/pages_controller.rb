@@ -1,14 +1,11 @@
 class PagesController < ApplicationController
-  # before_action :set_user, only: %i[dashboard]
+  skip_before_action :authenticate_user!, only: :home
 
   def home
   end
 
-
   def dashboard
-    # @user = User.find(params[:user_id])
-    # @pet.user_id = @user
-    # alternative code to use:
-    # @pets = @user.pets
+    @bookings = Booking.where(user_id: current_user)
+    @pet_bookings = Booking.where(pet_id: current_user)
   end
 end

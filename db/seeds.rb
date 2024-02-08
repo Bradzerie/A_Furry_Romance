@@ -8,26 +8,42 @@ User.destroy_all
 
 puts 'creating one user'
 
-user = User.new(
-  email: 'test@email.com',
+user1 = User.new(
+  email: 'mark@gmail.com',
   password: 'password'
 )
-user.save!
+user1.save!
+
+user2 = User.new(
+  email: 'sam@gmail.com',
+  password: 'password'
+)
+user2.save!
+
+user3 = User.new(
+  email: 'mike@gmail.com',
+  password: 'password'
+)
+user3.save!
+
+users = [user1, user2, user3]
 
 puts "created #{User.count} users"
 
 puts 'creating 10 pets for testing'
 
-10.times do
-  cat = Pet.new(
-    name: Faker::Creature::Cat.name,
-    age: rand(0..15),
-    species: Pet::SPECIES.sample,
-    gender: Pet::GENDER.sample,
-    price: rand(15..500)
-  )
-  cat.user = user
-  cat.save!
+users.each do |user|
+  4.times do
+    cat = Pet.new(
+      name: Faker::Creature::Cat.name,
+      age: rand(0..15),
+      species: Pet::SPECIES.sample,
+      gender: Pet::GENDER.sample,
+      price: rand(15..500)
+    )
+    cat.user = user
+    cat.save!
+  end
 end
 
 puts "added #{Pet.count} pets"

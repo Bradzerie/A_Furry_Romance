@@ -8,6 +8,7 @@
             <h3><%= link_to pet.name, pet_path(pet) %></h3>
             <p><%= pet.species %></p>
             <p>Price: $<%= pet.price %></p>
+            <p>Owner: <%=pet.user.email%></p>
             </div>
           <% end %>
         </div>
