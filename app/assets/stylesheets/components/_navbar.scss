@@ -1,12 +1,14 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: orange;
+  background: #F4F4F4;
+  padding-left: 200px;
+  color: rgb(105, 61, 7);
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
   justify-content: right;
-  padding-right: 0px;
+  padding-right: 200px;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -17,6 +19,6 @@
 //   justify-content:left;
 // }
 
-// .container-fluid {
-//   align-items: flex-end;
-// }
+.navbar-lewagon .container-fluid {
+  color: pink;
+}

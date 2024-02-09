@@ -1,15 +1,10 @@
-<h1>Welcome to your Dashboard <%= current_user.email %></h1>
-<ul>
-  <p>View your listings</p>
-  <br>
-  <p>Edit or delete your listings</p>
-  <br>
+<div class="container-dash">
+  <h2>Welcome to your Dashboard</h2>
+</div>
 
-<%= link_to 'View listings', pets_path %>
+<br>
 
-<p>Edit your listing</p>
-
-<div class="container">
+<div class="container-dash">
     <h3>Your Bookings</h3>
       <div class="col-12">
         <div class="columns is-centered">
@@ -28,38 +23,48 @@
       </div>
   </div>
 
-<div class="container">
-    <h3>Bookings for your Pets</h3>
-    <div class="col-12">
-      <div class="columns is-centered">
-        <div class="cards">
-            <% @pet_bookings.each do |booking| %>
-                <div class="div">
-                  <p><%= booking.pet.name %> | <%= booking.pet.species %> </p>
-                  <p> <%= booking.pet.gender %> | <%= booking.pet.age %>yr</p>
-                  <p><%= booking.start_date %> to <%= booking.end_date %> </p>
-                  <p>Booked by <%= booking.user.email %></p>
-                  <p> Status: <%= booking.status %></p>
-                  <%  if booking.status == 'Pending' %>
-                    <%= button_to "Accept", accept_booking_path(booking), class: "btn btn-outline-success", method: :post%>
-                    <%= button_to "Decline", reject_booking_path(booking), class: "btn btn-outline-danger", method: :post%>
-                  <% end %>
-                </div>
-            <% end %>
-          </div>
-      </div>
+<br>
+
+<div class="container-dash">
+  <h3>Bookings for your Pets</h3>
+  <div class="col-12">
+    <div class="columns is-centered">
+      <div class="cards">
+          <% @pet_bookings.each do |booking| %>
+              <div class="div">
+                <p><%= booking.pet.name %> | <%= booking.pet.species %> </p>
+                <p> <%= booking.pet.gender %> | <%= booking.pet.age %>yr</p>
+                <p><%= booking.start_date %> to <%= booking.end_date %> </p>
+                <p>Booked by <%= booking.user.email %></p>
+                <p> Status: <%= booking.status %></p>
+                <%  if booking.status == 'Pending' %>
+                  <div class="button-container">
+                    <div style="display: inline-block;">
+                      <%= button_to "Accept", accept_booking_path(booking), class: "btn btn-outline-primary", method: :post, style: "border-radius: 20px;"%>
+                    </div>
+                    <div style="display: inline-block;">
+                      <%= button_to "Decline", reject_booking_path(booking), class: "btn btn-outline-primary", method: :post, style: "border-radius: 20px;"%>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+          <% end %>
+        </div>
     </div>
   </div>
+</div>
 
-<div>
-<%= simple_form_for(@pet) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :age %>
-  <%= f.input :species %>
-  <%= f.input :gender %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.button :submit, class: 'btn btn-primary'%>
-<% end %>
+<br>
 
+<div class="container">
+  <h3>Create a new listing</h3>
+  <%= simple_form_for(@pet) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :age %>
+    <%= f.input :species %>
+    <%= f.input :gender %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.button :submit, class: 'btn btn-primary'%>
+  <% end %>
 </div>
