@@ -10,6 +10,24 @@
   // color: white;
 }
 
+.booking {
+  background-image: url("booking.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  height: 700px
+}
+
+.container-booking {
+  text-align: right;
+
+}
+
+.text-booking {
+  padding-right: 100px;
+  padding-top: 100px;
+}
+
 .container-home {
   width: 700px;
   margin: 250px;
