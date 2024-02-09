@@ -1,32 +1,24 @@
 .navbar-lewagon {
-  
-  //SCSS nested
-
   justify-content: space-between;
-  background: white;
-
-  .navbar-collapse {
-    flex-grow: 0;
-  }
-
-  .navbar-brand img {
-    width: 60px;
-    // height: 90px;
-  }
-
-  .container-fluid {
-    position: relative;
-    // padding: 15px;
-    width: 1000px;
-  }
-
-  .text {
-    display: inline-block;
-  }
-
-
+  background: #F4F4F4;
+  padding-left: 200px;
+  color: rgb(105, 61, 7);
 }
 
-.navbar-lewagon .dropdown {
+.navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  justify-content: right;
+  padding-right: 200px;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 100px;
+}
+
+// .navbar-lewagon .navbar-brand {
+//   justify-content:left;
+// }
+
+.navbar-lewagon .container-fluid {
+  color: pink;
 }

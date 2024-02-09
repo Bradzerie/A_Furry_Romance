@@ -1,13 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
 
-
 .cards{
-border-radius: 4px;
+  border-radius: 4px;
 }
 
-.status-button{
+.btn-primary{
+  border-radius: 4px;
+}
 
+.button-container {
+  text-align: center;
+  margin-top: 10px; /* Adjust as needed */
 }
 
 div.form-mod {

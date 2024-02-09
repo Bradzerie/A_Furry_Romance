@@ -40,6 +40,21 @@
   text-align: center;
 }
 
+.container-header{
+  width: 800px;
+  padding: 10px;
+  text-align: center;
+}
+
+.container-dash{
+  width: 1200px;
+  margin: auto;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
 .cards{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -70,6 +85,11 @@ text-align: center;
 
 .card-pet p{
   text-align: left;
+}
+
+.button-container {
+  text-align: center;
+  margin: 20px;
 }
 
 #paragraph{
