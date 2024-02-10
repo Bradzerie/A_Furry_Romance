@@ -5,9 +5,6 @@
   background-size: 100%;
   background-position: center;
   padding: 120px 0;
-  // width: 1800px;
-  // height: auto;
-  // color: white;
 }
 
 .problem {
@@ -60,6 +57,15 @@
   justify-content: center;
 }
 
+.container-new{
+  width: 800px;
+  margin: auto;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
 .cards{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -78,10 +84,12 @@
 
 .container-pet{
   width: 700px;
-  height: 1000px;
+  // height: 1000px;
   background-color: white;
   padding: 10px;
-  margin-left: 30px;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
 }
 
 .card-pet{

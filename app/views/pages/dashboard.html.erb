@@ -57,14 +57,16 @@
 <br>
 
 
-<div class="form-mod">
-<%= simple_form_for(@pet) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :age %>
-  <%= f.input :species %>
-  <%= f.input :gender %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.button :submit, class: 'btn btn-primary' %>
-<% end %>
+<div class="container-new">
+  <h3>Create a new listing</h3>
+  <br>
+    <%= simple_form_for(@pet) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :age %>
+      <%= f.input :species %>
+      <%= f.input :gender %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    <% end %>
 </div>
