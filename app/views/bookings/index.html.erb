@@ -3,12 +3,11 @@
   <div class="bookings-cards">
     <ul>
       <% @bookings.each do |booking| %>
-          <li>
               <p><%= booking.user.email %> | Booking ID: <%= booking.id %></p>
               <p><%= booking.start_date %> to <%= booking.end_date %> | Price: $<%= @pet.price %></p>
               <p> Booking Status: <%= booking.status %></p>
-          </li>
       <% end %>
       </ul>
+      <%= button_to 'Return to Listings', pets_path, class: "btn btn-primary", method: :get, style: "border-radius: 20px;"%>
     </div>
 </div>
