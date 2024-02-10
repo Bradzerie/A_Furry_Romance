@@ -1,5 +1,10 @@
 <div class="banner">
   <div class="container-home">
-  <h2 class="text-left"> <%= link_to 'Find yourself a furry friend!!', pets_path %></h2>
+  <h2>Experience the joys of a furry friend</h2><p>without the responsibilies!</p>
+  <br>
+  <h3 class="problem">Considering pet ownership? Or simply wish to have a pet for the day? </h3>
+  <div>
+    <%= button_to 'Find yourself a furry friend', pets_path, class: "btn btn-primary", method: :get, style: "border-radius: 20px;"%>
+  </div>
   </div>
 </div>
