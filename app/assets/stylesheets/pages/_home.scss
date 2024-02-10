@@ -10,17 +10,21 @@
   // color: white;
 }
 
+.login-css {
+  width: 300px;
+  text-align: left;
+}
+
 .booking {
   background-image: url("booking.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
-  height: 700px
+  height: 400px;
 }
 
 .container-booking {
   text-align: right;
-
 }
 
 .text-booking {
@@ -31,6 +35,16 @@
 .container-home {
   width: 700px;
   margin: 250px;
+}
+
+.container-login {
+  background-image: url("login-resize.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  height: 700px;
+  text-align: left;
+  padding-left: 50px;
 }
 
 .container{
