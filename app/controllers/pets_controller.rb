@@ -20,7 +20,6 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    raise
     @pet = Pet.find(params[:id])
     @pet.destroy
     redirect_to pets_path(@pet.user), status: :see_other
